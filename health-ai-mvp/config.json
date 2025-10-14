@@ -1,0 +1,8 @@
+{
+  "mvpVersion": "1.0.0",
+  "gdprConsentRequired": true,
+  "mhraNonDeviceStatus": true,
+  "defaultLabTestsFile": "/data/lab_tests.json",
+  "enableMultiTestUpload": false,
+  "contentUpdateIntervalDays": 90
+}

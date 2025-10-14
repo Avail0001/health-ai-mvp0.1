@@ -1,0 +1,16 @@
+{
+  "name": "health-ai-mvp",
+  "version": "1.0.0",
+  "description": "UK-compliant educational AI tool for lab results",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'No build step required for MVP'"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health AI MVP</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <h1>Health AI Lab Report Educational Tool</h1>
+
+  <div>
+    <label>Lab Test Name:
+      <input type="text" id="testName" placeholder="e.g., HbA1c">
+    </label>
+    <label>Test Value:
+      <input type="number" id="testValue" placeholder="Enter value">
+    </label>
+  </div>
+
+  <div id="privacy" style="margin-top:20px;">
+    <label>
+      <input type="checkbox" id="consentCheckbox" required>
+      I consent to the processing of my health data for educational analysis as described in the <a href="/templates/privacy-policy.html" target="_blank">Privacy Policy</a>.
+    </label>
+  </div>
+
+  <button id="uploadBtn" disabled style="margin-top:15px;padding:10px 20px;font-size:16px;">Upload Lab Report</button>
+
+  <div id="result-container" style="margin-top:20px;"></div>
+
+  <script type="module" src="scripts/consentLogic.js"></script>
+  <script type="module" src="scripts/uploadHandler.js"></script>
+</body>
+</html>

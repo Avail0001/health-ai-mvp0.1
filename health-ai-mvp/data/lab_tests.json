@@ -1,0 +1,29 @@
+{
+  "HbA1c": {
+    "name": "HbA1c",
+    "units": "mmol/mol",
+    "ranges": {
+      "normal": {"min": 0, "max": 47},
+      "pre-diabetes": {"min": 48, "max": 57},
+      "diabetes": {"min": 58, "max": 100}
+    },
+    "educational_text": "High HbA1c indicates that average blood sugar has been elevated over the past 2–3 months.",
+    "sources": [
+      "https://www.nhs.uk/conditions/diabetes/diagnosis/",
+      "NICE Guideline NG17"
+    ]
+  },
+  "Cholesterol": {
+    "name": "Total Cholesterol",
+    "units": "mmol/L",
+    "ranges": {
+      "desirable": {"min": 0, "max": 5},
+      "borderline": {"min": 5.1, "max": 6.4},
+      "high": {"min": 6.5, "max": 15}
+    },
+    "educational_text": "Cholesterol levels above desirable range may increase risk of heart disease.",
+    "sources": [
+      "https://www.nhs.uk/conditions/cholesterol/"
+    ]
+  }
+}
