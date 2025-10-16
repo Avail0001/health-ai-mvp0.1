@@ -1,0 +1,4 @@
+export const sleep=(ms)=>new Promise(r=>setTimeout(r,ms));
+export function addMsg(role,html){const log=document.getElementById('chatLog');const b=document.createElement('div');b.className='msg '+(role==='user'?'user':'ai');b.innerHTML=html;log.appendChild(b);log.scrollTop=log.scrollHeight;return b;}
+export function typeWords(el,text){const sp=Number(localStorage.getItem('type_speed')||50);const words=String(text).split(/\s+/);el.innerHTML='';words.forEach((w,i)=>{const s=document.createElement('span');s.className='type-span';s.style.animationDelay=(i*sp/1000)+'s';s.textContent=(i?' ':'')+w;el.appendChild(s);});}
+export function setupFab(){const m=document.getElementById('fabMenu');document.getElementById('fabOpen').addEventListener('click',()=>m.classList.toggle('hidden'));document.addEventListener('click',e=>{if(!e.target.closest('#fabMenu')&&!e.target.closest('#fabOpen'))m.classList.add('hidden');});}

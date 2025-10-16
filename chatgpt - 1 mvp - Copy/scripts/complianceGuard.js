@@ -1,0 +1,1 @@
+export const complianceState={gdpr:true,mhra_exempt:true,nhs_reference:true,data_local:true};

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Labcheck AI v7.5 (UK NHS Educational)</title>
+  <link rel="stylesheet" href="styles/styles.css"/>
+  <link rel="stylesheet" href="styles/responsive.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2/dist/tesseract.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body class="light">
+  <div id="loader" class="loader">
+    <div class="beaker"><div class="liquid"></div><div class="bubbles"><span></span><span></span><span></span></div></div>
+    <p>?? Initialising…</p>
+  </div>
+
+  <div id="consentModal" class="modal hidden">
+    <div class="modal-content fade-in">
+      <h2>Consent & Disclaimer</h2>
+      <div id="consentHtml">
+        <p>This prototype is for <b>educational purposes</b> and <b>not a medical device</b>.</p>
+        <ul>
+          <li>All data processed locally on your device.</li>
+          <li>Based on NHS reference ranges (UK).</li>
+          <li>Always seek medical advice from your GP or NHS 111.</li>
+        </ul>
+      </div>
+      <div class="actions">
+        <button id="rejectBtn" class="btn-secondary">Reject</button>
+        <button id="acceptBtn" class="btn-primary">Confirm & Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="topbar hidden" id="mainHeader">
+    <div class="brand">
+      <div class="avatar">??</div>
+      <div class="meta">
+        <h1>Labcheck AI</h1>
+        <p>UK NHS Educational Assistant</p>
+      </div>
+    </div>
+    <button id="openSettings" class="btn-ghost">?</button>
+  </header>
+
+  <main id="appMain" class="hidden fade-section">
+    <section id="settingsPanel" class="settings hidden">
+      <h3>Settings</h3>
+      <label>Typing Speed
+        <select id="speedSelect">
+          <option value="30">Fast</option>
+          <option value="50" selected>Normal</option>
+          <option value="80">Slow</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="themeToggle"/> Dark Mode</label>
+      <div class="row">
+        <button id="resetConsent" class="btn-secondary">Reset Consent</button>
+        <button id="clearLocal" class="btn-secondary">Clear Local Data</button>
+        <button id="closeSettings" class="btn-primary">Close</button>
+      </div>
+    </section>
+
+    <section class="chat">
+      <div id="chatLog" class="chat-log"></div>
+
+      <div id="fabMenu" class="fab-menu hidden">
+        <label for="fileImage" class="fab-item">?? Camera / Photo / PDF</label>
+        <label for="fileText" class="fab-item">?? Upload TXT / JSON</label>
+        <button id="pasteText" class="fab-item">? Paste Text</button>
+      </div>
+
+      <section class="drawer hidden" id="drawer">
+        <div class="drawer-body">
+          <h3>Upload or Paste</h3>
+          <div class="cols">
+            <div class="card">
+              <h4>Image / PDF</h4>
+              <input id="fileImage" type="file" accept="image/*,.pdf"/>
+            </div>
+            <div class="card">
+              <h4>Text / JSON</h4>
+              <input id="fileText" type="file" accept=".txt,.json"/>
+            </div>
+          </div>
+          <textarea id="manualText" rows="6" placeholder="Paste OCR text or JSON here"></textarea>
+          <div class="row">
+            <button id="processText" class="btn-primary">Process</button>
+            <button id="loadSample" class="btn-secondary">Load sample</button>
+            <button id="closeDrawer" class="btn-ghost">Close</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="composer">
+        <button id="fabOpen" class="fab">+</button>
+        <input id="userMessage" placeholder='Type e.g. "HbA1c 8.2%" or "BP 145/90"'/>
+        <button id="sendBtn" class="btn-primary">Send</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="templates/privacy-policy.html" target="_blank">Privacy</a> |
+      <a href="templates/disclaimer.html" target="_blank">Disclaimer</a> |
+      <a href="compliance/dpia.md" target="_blank">DPIA</a> |
+      <a href="compliance/hazard-log.md" target="_blank">Hazard Log</a>
+    </footer>
+  </main>
+  
+  <script type="module" src="scripts/consentLogic.js"></script>
+  <script type="module" src="scripts/complianceGuard.js"></script>
+  <script type="module" src="scripts/conversationalManager.js"></script>
+  
+  <script type="module">
+console.log("? Analyzer inline module loaded");
+
+const NHS_REFERENCES = {
+  "HbA1c": { range: "= 6.5%", interpret: v => v > 6.5 ? "Above normal — suboptimal glucose control" : "Within target" },
+  "Total Cholesterol": { range: "= 5 mmol/L", interpret: v => v > 5 ? "High cholesterol" : "Within healthy range" },
+  "Blood Pressure": { range: "Ideal <120/80 mmHg", interpret: v => {
+      if (typeof v !== "string") v = String(v || "");
+      const [s, d] = v.split("/").map(Number);
+      if (!s || !d) return "Value not recognised";
+      if (s >= 140 || d >= 90) return "High blood pressure (Stage 1 Hypertension)";
+      if (s >= 120 || d >= 80) return "Elevated";
+      return "Ideal";
+  }},
+  "Triglycerides": { range: "< 1.7 mmol/L", interpret: v => v > 1.7 ? "Elevated" : "Normal" },
+  "HDL Cholesterol": { range: "= 1.0 mmol/L", interpret: v => v < 1.0 ? "Low (risk factor)" : "Healthy" },
+  "LDL Cholesterol": { range: "< 3.0 mmol/L", interpret: v => v > 3.0 ? "High (limit saturated fat)" : "Normal" },
+  "Vitamin D": { range: "= 50 nmol/L", interpret: v => v < 50 ? "Low (deficiency likely)" : "Sufficient" },
+  "Creatinine": { range: "45–90 µmol/L", interpret: v => v > 90 ? "Possible reduced kidney function" : "Normal" },
+  "Haemoglobin": { range: "130–170 g/L (men), 120–150 g/L (women)", interpret: v => v < 120 ? "Low (possible anaemia)" : "Normal" }
+};
+
+const DIET_GUIDE = {
+  "glucose": [
+    "Balanced meals (low sugar, high fibre).",
+    "30 min brisk walk daily.",
+    "Regular HbA1c check every 3–6 months."
+  ],
+  "cholesterol": [
+    "Reduce saturated fat, avoid processed foods.",
+    "Add oats, legumes, olive oil.",
+    "Monitor lipid profile yearly."
+  ],
+  "bp": [
+    "Reduce salt (<6g/day).",
+    "Limit caffeine and alcohol.",
+    "150 min of moderate exercise weekly."
+  ]
+};
+
+export async function analyzeLabReport(report) {
+  console.log("Analyzing report:", report);
+  const results = [];
+  for (const [test, value] of Object.entries(report)) {
+    const ref = NHS_REFERENCES[test];
+    if (!ref) continue;
+    const numeric = parseFloat(value);
+    const interpretation = ref.interpret(isNaN(numeric) ? value : numeric);
+    results.push({
+      name: test,
+      result: value,
+      range: ref.range,
+      interpretation,
+      guide: test.includes("Glucose") || test.includes("HbA1c") ? DIET_GUIDE.glucose :
+             test.includes("Cholesterol") ? DIET_GUIDE.cholesterol :
+             test.includes("Pressure") ? DIET_GUIDE.bp : []
+    });
+  }
+  console.log("? Results ready:", results);
+  return results;
+}
+
+(async () => {
+  const example = { "HbA1c": 8.2, "Total Cholesterol": 6.3, "Blood Pressure": "145/90" };
+  const res = await analyzeLabReport(example);
+  console.log("?? Final Summary:", res);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+/static/scripts/analyzeLabReport.js
+/static/data/lab_tests.json
+/static/data/conditions.json

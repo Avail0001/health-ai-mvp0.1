@@ -1,0 +1,1 @@
+export function saveRating(n){localStorage.setItem('labcheck_feedback',JSON.stringify({ts:Date.now(),rating:n}));}

@@ -1,0 +1,5 @@
+@media(max-width:640px){
+  .chat-log{height:60vh}
+  .cols{grid-template-columns:1fr}
+  .meta h1{font-size:18px}
+}

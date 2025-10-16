@@ -1,0 +1,1 @@
+Labcheck AI v7.1 — UK NHS-referenced educational prototype. Static, client-only. Deploy by dragging this folder to Netlify.

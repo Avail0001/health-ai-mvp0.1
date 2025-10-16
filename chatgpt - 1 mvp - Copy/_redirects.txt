@@ -1,0 +1,4 @@
+/scripts/*   /scripts/:splat   200
+/data/*      /data/:splat      200
+/styles/*    /styles/:splat    200
+/*           /index.html       200

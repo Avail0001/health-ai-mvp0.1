@@ -1,0 +1,133 @@
+{
+  "general": {
+    "diet": [
+      "5-a-day fruit & veg",
+      "Wholegrains, legumes, nuts, seeds",
+      "Lean proteins; oily fish 1–2x/week",
+      "Limit free sugars and ultra-processed foods"
+    ],
+    "lifestyle": [
+      "150 min/week moderate activity + strength 2x/week",
+      "Sleep 7–9 hours",
+      "Stop smoking; limit alcohol per UK guidance"
+    ]
+  },
+  "glucose": {
+    "diet": [
+      "Balanced carbs with fibre and protein",
+      "Prefer wholegrains; limit refined sugars",
+      "Evenly spaced meals/snacks"
+    ],
+    "lifestyle": [
+      "10–15 min post-meal walks",
+      "Weight management if appropriate"
+    ]
+  },
+  "cholesterol": {
+    "diet": [
+      "Reduce saturated fats (fatty meats, butter, cheese)",
+      "Use olive/rapeseed oil; include nuts & seeds",
+      "Increase soluble fibre (oats, beans, pulses)",
+      "Include oily fish 1–2x/week",
+      "Consider plant stanols/sterols per UK advice"
+    ],
+    "lifestyle": [
+      "Regular aerobic activity",
+      "Weight management"
+    ]
+  },
+  "bp": {
+    "diet": [
+      "DASH-style: fruit, veg, wholegrains, low-fat dairy",
+      "Salt <6 g/day (read labels)",
+      "Limit alcohol"
+    ],
+    "lifestyle": [
+      "150 min/week activity",
+      "Stress management and good sleep"
+    ]
+  },
+  "renal": {
+    "diet": [
+      "Moderate protein per GP/dietitian advice",
+      "Adjust potassium/phosphate if high",
+      "Limit salt"
+    ],
+    "lifestyle": [
+      "Hydration guidance per kidney function",
+      "BP and glucose control"
+    ]
+  },
+  "liver": {
+    "diet": [
+      "Limit alcohol within UK guidance",
+      "Reduce saturated fat; increase fibre"
+    ],
+    "lifestyle": [
+      "Weight management",
+      "Regular activity"
+    ]
+  },
+  "bone": {
+    "diet": [
+      "Calcium sources (dairy/fortified alternatives, leafy veg)",
+      "Vitamin D (safe sun/supplements per UK guidance)"
+    ],
+    "lifestyle": [
+      "Weight-bearing exercise"
+    ]
+  },
+  "iron": {
+    "diet": [
+      "Iron-rich foods (lean meats, legumes, leafy greens)",
+      "Vitamin C with meals to aid absorption",
+      "Avoid tea/coffee with meals if iron low"
+    ],
+    "lifestyle": []
+  },
+  "b12": {
+    "diet": [
+      "B12 sources (fish, dairy, eggs, fortified foods)"
+    ],
+    "lifestyle": []
+  },
+  "folate": {
+    "diet": [
+      "Folate-rich greens, beans, citrus"
+    ],
+    "lifestyle": []
+  },
+  "vitamin_d": {
+    "diet": [
+      "Vitamin D supplements per UK guidance in autumn–winter"
+    ],
+    "lifestyle": [
+      "Safe sunlight exposure"
+    ]
+  },
+  "low_purine": {
+    "diet": [
+      "Limit red/organ meats and certain seafood",
+      "Limit alcohol (especially beer/spirits)",
+      "Hydrate well"
+    ],
+    "lifestyle": [
+      "Weight management if appropriate"
+    ]
+  },
+  "heart_failure": {
+    "diet": [
+      "Limit sodium; read food labels",
+      "Fluid guidance per clinician"
+    ],
+    "lifestyle": [
+      "Regular symptom and weight monitoring"
+    ]
+  },
+  "coag": { "diet": [], "lifestyle": [] },
+  "fbc": { "diet": [], "lifestyle": [] },
+  "electrolytes": { "diet": [], "lifestyle": [] },
+  "inflammation": { "diet": [], "lifestyle": [] },
+  "pancreas": { "diet": [], "lifestyle": [] },
+  "cardiac": { "diet": [], "lifestyle": [] }
+}

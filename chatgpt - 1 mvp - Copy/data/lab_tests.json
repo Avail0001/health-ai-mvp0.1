@@ -1,0 +1,93 @@
+{
+  "HbA1c": {"unit":"%","high":6.5,"edu":"Maintain HbA1c within target with balanced meals and activity.","category":"glucose","interpretation":{"high":"Above target","normal":"Within target"}},
+  "Fasting Glucose": {"unit":"mmol/L","high":7.0,"edu":"Balanced carbs; confirm with GP if persistently high.","category":"glucose","interpretation":{"high":"High fasting glucose","normal":"Within range"}},
+  "Random Glucose": {"unit":"mmol/L","high":11.1,"edu":"If high, discuss confirmatory testing with GP.","category":"glucose","interpretation":{"high":"High random glucose","normal":"Within range"}},
+  "Oral Glucose Tolerance 2h": {"unit":"mmol/L","high":11.1,"edu":"OGTT 2h interpretation per NHS diabetes guidance.","category":"glucose","interpretation":{"high":"High OGTT 2h","normal":"Within range"}},
+
+  "Total Cholesterol": {"unit":"mmol/L","high":5.0,"edu":"Reduce saturated fat; increase fibre; stay active.","category":"cholesterol","interpretation":{"high":"High cholesterol","normal":"Within target"}},
+  "LDL Cholesterol": {"unit":"mmol/L","high":3.0,"edu":"Lower saturated/trans fats; consider plant sterols; GP plan.","category":"cholesterol","interpretation":{"high":"Raised LDL","normal":"Within target"}},
+  "HDL Cholesterol": {"unit":"mmol/L","low":1.0,"edu":"Activity and healthy fats support HDL.","category":"cholesterol","interpretation":{"low":"Low HDL","normal":"Within target"}},
+  "Triglycerides": {"unit":"mmol/L","high":1.7,"edu":"Reduce sugars/alcohol; weight management; activity.","category":"cholesterol","interpretation":{"high":"Raised triglycerides","normal":"Within target"}},
+  "Non-HDL Cholesterol": {"unit":"mmol/L","high":3.8,"edu":"Overall atherogenic lipoproteins; optimise lifestyle; GP plan.","category":"cholesterol","interpretation":{"high":"Raised non-HDL","normal":"Within target"}},
+  "Apolipoprotein B": {"unit":"g/L","high":1.0,"edu":"Marker of atherogenic particles; align with LDL lowering.","category":"cholesterol","interpretation":{"high":"Raised ApoB","normal":"Within range"}},
+  "Lipoprotein(a)": {"unit":"mg/dL","high":50,"edu":"Inherited; focus on LDL lowering; family risk discussion.","category":"cholesterol","interpretation":{"high":"Raised Lp(a)","normal":"Within range"}},
+
+  "Urea": {"unit":"mmol/L","low":2.5,"high":7.8,"edu":"Hydration and renal function context.","category":"renal","interpretation":{"low":"Below range","high":"Above range","normal":"Within range"}},
+  "Creatinine": {"unit":"µmol/L","low":60,"high":110,"edu":"Kidney function; consider eGFR.","category":"renal","interpretation":{"low":"Below range","high":"Above range","normal":"Within range"}},
+  "eGFR": {"unit":"mL/min/1.73m²","low":60,"edu":"CKD risk monitoring; optimise BP and glucose.","category":"renal","interpretation":{"low":"Reduced eGFR","normal":"Within range"}},
+  "Cystatin C": {"unit":"mg/L","low":0.6,"high":1.0,"edu":"Alternative GFR estimate; discuss with GP.","category":"renal","interpretation":{"low":"Low","high":"High","normal":"Within range"}},
+  "Urine ACR": {"unit":"mg/mmol","low":0,"high":3,"edu":"Albuminuria indicates kidney risk.","category":"renal","interpretation":{"high":"Albuminuria","normal":"Within range"}},
+  "Urine PCR": {"unit":"mg/mmol","low":0,"high":15,"edu":"Proteinuria quantification; monitor with GP.","category":"renal","interpretation":{"high":"Proteinuria","normal":"Within range"}},
+
+  "Sodium": {"unit":"mmol/L","low":135,"high":145,"edu":"Fluid/electrolyte balance; review meds.","category":"electrolytes","interpretation":{"low":"Hyponatraemia","high":"Hypernatraemia","normal":"Within range"}},
+  "Potassium": {"unit":"mmol/L","low":3.5,"high":5.0,"edu":"Renal/medication context; urgent if very high.","category":"electrolytes","interpretation":{"low":"Hypokalaemia","high":"Hyperkalaemia","normal":"Within range"}},
+  "Chloride": {"unit":"mmol/L","low":98,"high":107,"edu":"Acid–base and volume status context.","category":"electrolytes","interpretation":{"low":"Low chloride","high":"High chloride","normal":"Within range"}},
+  "Bicarbonate": {"unit":"mmol/L","low":22,"high":29,"edu":"Acid–base status; discuss persistent changes.","category":"electrolytes","interpretation":{"low":"Low HCO₃","high":"High HCO₃","normal":"Within range"}},
+  "Calcium": {"unit":"mmol/L","low":2.2,"high":2.6,"edu":"Check adjusted Ca; vitamin D and PTH if abnormal.","category":"bone","interpretation":{"low":"Low calcium","high":"High calcium","normal":"Within range"}},
+  "Adjusted Calcium": {"unit":"mmol/L","low":2.2,"high":2.6,"edu":"Albumin-corrected calcium.","category":"bone","interpretation":{"low":"Low","high":"High","normal":"Within range"}},
+  "Phosphate": {"unit":"mmol/L","low":0.8,"high":1.5,"edu":"Renal/bone context; review diet.","category":"bone","interpretation":{"low":"Low phosphate","high":"High phosphate","normal":"Within range"}},
+  "Magnesium": {"unit":"mmol/L","low":0.7,"high":1.0,"edu":"Dietary sources; meds; renal context.","category":"electrolytes","interpretation":{"low":"Low magnesium","high":"High magnesium","normal":"Within range"}},
+
+  "ALT": {"unit":"U/L","low":0,"high":41,"edu":"Liver health; alcohol moderation; weight management.","category":"liver","interpretation":{"high":"Raised ALT","normal":"Within range"}},
+  "AST": {"unit":"U/L","low":0,"high":40,"edu":"Liver/muscle context; correlate clinically.","category":"liver","interpretation":{"high":"Raised AST","normal":"Within range"}},
+  "ALP": {"unit":"U/L","low":30,"high":130,"edu":"Bone/liver source; correlate GGT.","category":"liver","interpretation":{"low":"Low ALP","high":"Raised ALP","normal":"Within range"}},
+  "GGT": {"unit":"U/L","low":0,"high":60,"edu":"Cholestasis/alcohol/medication context.","category":"liver","interpretation":{"high":"Raised GGT","normal":"Within range"}},
+  "Bilirubin": {"unit":"µmol/L","low":0,"high":21,"edu":"Jaundice? seek medical advice.","category":"liver","interpretation":{"high":"Raised bilirubin","normal":"Within range"}},
+  "Albumin": {"unit":"g/L","low":35,"high":50,"edu":"Nutrition/liver/kidney context.","category":"liver","interpretation":{"low":"Low albumin","high":"High albumin","normal":"Within range"}},
+  "Total Protein": {"unit":"g/L","low":60,"high":80,"edu":"Protein status; liver/kidney/inflammation context.","category":"liver","interpretation":{"low":"Low TP","high":"High TP","normal":"Within range"}},
+  "Globulin": {"unit":"g/L","low":20,"high":36,"edu":"Inflammation/immune context.","category":"liver","interpretation":{"low":"Low globulin","high":"High globulin","normal":"Within range"}},
+
+  "CRP": {"unit":"mg/L","low":0,"high":5,"edu":"Inflammation/infection marker; context dependent.","category":"inflammation","interpretation":{"high":"Raised CRP","normal":"Within range"}},
+  "ESR": {"unit":"mm/hr","low":0,"high":20,"edu":"Non-specific inflammation marker.","category":"inflammation","interpretation":{"high":"Raised ESR","normal":"Within range"}},
+  "Procalcitonin": {"unit":"ng/mL","low":0.0,"high":0.5,"edu":"Bacterial infection context.","category":"inflammation","interpretation":{"high":"Raised PCT","normal":"Within range"}},
+  "Lactate": {"unit":"mmol/L","low":0.5,"high":2.2,"edu":"Tissue perfusion context.","category":"inflammation","interpretation":{"high":"Raised lactate","normal":"Within range"}},
+
+  "TSH": {"unit":"mIU/L","low":0.4,"high":4.0,"edu":"Interpret with FT4/FT3.","category":"thyroid","interpretation":{"low":"Low TSH","high":"High TSH","normal":"Within range"}},
+  "Free T4": {"unit":"pmol/L","low":10,"high":22,"edu":"Thyroid hormone level.","category":"thyroid","interpretation":{"low":"Low FT4","high":"High FT4","normal":"Within range"}},
+  "Free T3": {"unit":"pmol/L","low":3.5,"high":6.5,"edu":"Hyperthyroid context.","category":"thyroid","interpretation":{"low":"Low FT3","high":"High FT3","normal":"Within range"}},
+  "Thyroid Peroxidase Antibodies": {"unit":"kU/L","high":34,"edu":"Autoimmune thyroiditis context.","category":"thyroid","interpretation":{"high":"Positive TPO Ab","normal":"Negative/low"}},
+
+  "25-OH Vitamin D": {"unit":"nmol/L","low":50,"edu":"≥50 sufficient; UK supplement advice if low.","category":"vitamin_d","interpretation":{"low":"Insufficient/deficient","normal":"Sufficient (≥50)"}},
+  "Vitamin B12": {"unit":"ng/L","low":200,"high":900,"edu":"Dietary/B12 deficiency context.","category":"b12","interpretation":{"low":"Low B12","high":"High B12","normal":"Within range"}},
+  "Folate": {"unit":"µg/L","low":180,"edu":"Low suggests folate deficiency.","category":"folate","interpretation":{"low":"Low folate","normal":"Within range"}},
+
+  "Ferritin": {"unit":"µg/L","low":30,"high":400,"edu":"Iron stores; inflammation may raise.","category":"iron","interpretation":{"low":"Low ferritin","high":"High ferritin","normal":"Within range"}},
+  "Serum Iron": {"unit":"µmol/L","low":10,"high":30,"edu":"Interpret with TIBC/TSat.","category":"iron","interpretation":{"low":"Low iron","high":"High iron","normal":"Within range"}},
+  "TIBC": {"unit":"µmol/L","low":45,"high":72,"edu":"Capacity ↑ in deficiency.","category":"iron","interpretation":{"low":"Low TIBC","high":"High TIBC","normal":"Within range"}},
+  "Transferrin": {"unit":"g/L","low":2.0,"high":3.6,"edu":"Carrier protein; use with TSat.","category":"iron","interpretation":{"low":"Low transferrin","high":"High transferrin","normal":"Within range"}},
+  "Transferrin Saturation": {"unit":"%","low":20,"high":45,"edu":"<20% suggests deficiency; >45% overload.","category":"iron","interpretation":{"low":"Low TSat","high":"High TSat","normal":"Within range"}},
+
+  "Uric Acid": {"unit":"µmol/L","low":140,"high":360,"edu":"Raised suggests gout risk; low-purine diet.","category":"low_purine","interpretation":{"low":"Low urate","high":"High urate","normal":"Within range"}},
+
+  "Amylase": {"unit":"U/L","low":30,"high":110,"edu":"Pancreatitis if high with symptoms.","category":"pancreas","interpretation":{"high":"Raised amylase","normal":"Within range"}},
+  "Lipase": {"unit":"U/L","low":13,"high":60,"edu":"Pancreatitis context.","category":"pancreas","interpretation":{"high":"Raised lipase","normal":"Within range"}},
+
+  "Troponin (hs)": {"unit":"ng/L","high":14,"edu":"Chest pain pathway; urgent care; educational only.","category":"cardiac","interpretation":{"high":"Raised troponin","normal":"Within range"}},
+  "NT-proBNP": {"unit":"ng/L","high":125,"edu":"Heart failure risk; sodium/fluids per clinician.","category":"heart_failure","interpretation":{"high":"Raised NT-proBNP","normal":"Within range"}},
+
+  "INR": {"unit":"","low":0.8,"high":1.2,"edu":"Coagulation monitoring; therapy context.","category":"coag","interpretation":{"low":"Low INR","high":"High INR","normal":"Within range"}},
+  "Prothrombin Time (PT)": {"unit":"s","low":11,"high":14,"edu":"Extrinsic pathway; anticoagulation context.","category":"coag","interpretation":{"low":"Low PT","high":"Prolonged PT","normal":"Within range"}},
+  "aPTT": {"unit":"s","low":25,"high":35,"edu":"Intrinsic pathway; therapy context.","category":"coag","interpretation":{"low":"Low aPTT","high":"Prolonged aPTT","normal":"Within range"}},
+  "D-dimer": {"unit":"µg/L","high":500,"edu":"VTE rule-out context; age-adjusted cut-offs.","category":"coag","interpretation":{"high":"Raised D-dimer","normal":"Within range"}},
+  "Fibrinogen": {"unit":"g/L","low":2.0,"high":4.0,"edu":"Clotting/inflammation marker.","category":"coag","interpretation":{"low":"Low","high":"High","normal":"Within range"}},
+
+  "WBC": {"unit":"x10^9/L","low":4.0,"high":11.0,"edu":"Infection/inflammation context.","category":"fbc","interpretation":{"low":"Leukopenia","high":"Leukocytosis","normal":"Within range"}},
+  "Neutrophils": {"unit":"x10^9/L","low":2.0,"high":7.5,"edu":"Bacterial infection context.","category":"fbc","interpretation":{"low":"Neutropenia","high":"Neutrophilia","normal":"Within range"}},
+  "Lymphocytes": {"unit":"x10^9/L","low":1.0,"high":4.0,"edu":"Viral/immune context.","category":"fbc","interpretation":{"low":"Lymphopenia","high":"Lymphocytosis","normal":"Within range"}},
+  "Monocytes": {"unit":"x10^9/L","low":0.2,"high":0.8,"edu":"Inflammation context.","category":"fbc","interpretation":{"low":"Monocytopenia","high":"Monocytosis","normal":"Within range"}},
+  "Eosinophils": {"unit":"x10^9/L","low":0.0,"high":0.4,"edu":"Allergy/parasites context.","category":"fbc","interpretation":{"high":"Eosinophilia","normal":"Within range"}},
+  "Basophils": {"unit":"x10^9/L","low":0.0,"high":0.1,"edu":"Allergy context.","category":"fbc","interpretation":{"high":"Basophilia","normal":"Within range"}},
+  "RBC": {"unit":"x10^12/L","low":4.2,"high":5.8,"edu":"Anaemia/polycythaemia context.","category":"fbc","interpretation":{"low":"Low RBC","high":"High RBC","normal":"Within range"}},
+  "Haemoglobin": {"unit":"g/L","low":130,"high":170,"edu":"Anaemia assessment; iron/B12/folate.","category":"fbc","interpretation":{"low":"Anaemia","high":"High Hb","normal":"Within range"}},
+  "Haematocrit": {"unit":"%","low":40,"high":50,"edu":"Packed cell volume.","category":"fbc","interpretation":{"low":"Low Hct","high":"High Hct","normal":"Within range"}},
+  "Mean Cell Volume": {"unit":"fL","low":80,"high":100,"edu":"Micro/macrocytosis work-up.","category":"fbc","interpretation":{"low":"Microcytosis","high":"Macrocytosis","normal":"Within range"}},
+  "MCH": {"unit":"pg","low":27,"high":33,"edu":"Cell Hb content.","category":"fbc","interpretation":{"low":"Low MCH","high":"High MCH","normal":"Within range"}},
+  "MCHC": {"unit":"g/L","low":300,"high":360,"edu":"Cell Hb concentration.","category":"fbc","interpretation":{"low":"Low MCHC","high":"High MCHC","normal":"Within range"}},
+  "RDW": {"unit":"%","low":11.5,"high":15.0,"edu":"Variation in RBC size.","category":"fbc","interpretation":{"high":"High RDW","normal":"Within range"}},
+  "Reticulocytes": {"unit":"%","low":0.5,"high":2.5,"edu":"Bone marrow response.","category":"fbc","interpretation":{"low":"Low retics","high":"High retics","normal":"Within range"}},
+  "Platelets": {"unit":"x10^9/L","low":150,"high":400,"edu":"Bleeding/clotting risk if abnormal.","category":"fbc","interpretation":{"low":"Thrombocytopenia","high":"Thrombocytosis","normal":"Within range"}},
+
+  "PTH": {"unit":"pmol/L","low":1.6,"high":6.9,"edu":"Calcium/PTH/vitamin D axis.","category":"bone","interpretation":{"low":"Low PTH","high":"High PTH","normal":"Within range"}},
+
+  "Blood Pressure": {"unit":"mmHg","type":"bp","edu":"Reduce salt; weight mgmt; 150 min/wk activity.","category":"bp","interpretation":{"high":"High blood pressure","normal":"Ideal <120/80"}}
+}
